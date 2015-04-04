@@ -15,7 +15,7 @@
   "main": "lib/Tabs.js",
   "dependencies": {
     "envify": "^3.4.0",
-    "react": "^0.12.0",
+    "react": "^0.13.1",
     "reactify": "^1.1.0"
   },
   "author": "Max Heiber",

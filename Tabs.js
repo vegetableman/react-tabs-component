@@ -18,7 +18,7 @@ var Tabs=React.createClass({
 		didChange:React.PropTypes.func,
 		classPrefix:React.PropTypes.string
 	},
-	getDefaultProps:function(){
+	defaultProps:function(){
 		return {
 			defaultTabNum:0,
 			willChange:noop,

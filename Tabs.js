@@ -1,4 +1,5 @@
 var React=require('react/addons');
+var i18n = require('i18next-client');
 
 var getChildrenArray=function(context){
 	var children=[];
@@ -13,7 +14,7 @@ var noop=function(){};
 var Tabs=React.createClass({
 	propTypes:{
 		defaultTabNum:React.PropTypes.number,
-		tabNames:React.PropTypes.array.isRequired,
+		tabs:React.PropTypes.array.isRequired,
 		willChange:React.PropTypes.func,
 		didChange:React.PropTypes.func,
 		classPrefix:React.PropTypes.string
@@ -56,19 +57,16 @@ var Tabs=React.createClass({
 		var tabClassName=classPrefix+'tab';
 		var activeTabClassName=tabClassName+' '+classPrefix+'active-tab';
 
-		var tabs=this.props.tabNames.map(function(tabName,tabNum){
+		var tabs=this.props.tabs.map(function(tab,tabNum){
 			var isActive= tabNum===this.state.activeTabNum;
 			return (
-				<span 
+				<span
 					key={'tab-'+tabNum}
 					className={isActive? activeTabClassName : tabClassName }
 					data-tabnum={tabNum}
-					onClick={this._change}
-				>
-					{tabName}
-				</span>
-
-					);
+					onClick={this._change}>
+						{tab.i18n ? i18n.t(tab.i18n): tab.name}
+				</span>);
 		}.bind(this));
 
 		return (

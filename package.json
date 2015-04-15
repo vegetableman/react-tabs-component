@@ -15,6 +15,7 @@
   "main": "lib/Tabs.js",
   "dependencies": {
     "envify": "^3.4.0",
+    "i18next-client": "^1.8.2",
     "react": "^0.13.1",
     "reactify": "^1.1.0"
   },

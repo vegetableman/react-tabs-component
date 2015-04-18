@@ -36,6 +36,9 @@ var Tabs=React.createClass({
 	getActiveTabNum:function(){
 		return this.state.activeTabNum;
 	},
+	componentWillReceiveProps: function(nextProps) {
+		this.setState({activeTabNum: nextProps.defaultTabNum});
+	},
 	_change:function(e){
 		var oldActiveTabNum=this.state.activeTabNum;
 		var newActiveTabNum=parseInt(e.target.getAttribute('data-tabnum'));
